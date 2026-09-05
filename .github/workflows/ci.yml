@@ -32,7 +32,7 @@ jobs:
       BROWSERFLOW_MASTER_KEY_FILE: ${{ github.workspace }}/secrets/master.key
       BROWSERFLOW_SESSION_SECRET_FILE: ${{ github.workspace }}/secrets/session.secret
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
         with:
           python-version: "3.12"
@@ -57,7 +57,7 @@ jobs:
   frontend:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: pnpm/action-setup@a3252b78c770c630d0efba79da2eb917b0ea819c # v3.0.0
         with:
           version: 9.15.9
@@ -73,6 +73,6 @@ jobs:
   compose:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: docker compose -f docker-compose.yml config
       - run: docker compose -f docker-compose.production.yml config
